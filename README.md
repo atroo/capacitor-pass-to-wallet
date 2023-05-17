@@ -5,7 +5,7 @@ Allow to add .pkpass file to Apple Wallet
 ## Install
 
 ```bash
-npm install capacitor-pass-to-wallet
+npm install @atroo/capacitor-pass-to-wallet
 npx cap sync
 ```
 
