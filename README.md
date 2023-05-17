@@ -15,6 +15,7 @@ npx cap sync
 
 * [`addToWallet(...)`](#addtowallet)
 * [`addMultipleToWallet(...)`](#addmultipletowallet)
+* [`passExists(...)`](#passexists)
 
 </docgen-index>
 
@@ -24,14 +25,14 @@ npx cap sync
 ### addToWallet(...)
 
 ```typescript
-addToWallet(options: { base64: string; }) => Promise<{ message: string; }>
+addToWallet(options: { base64: string; }) => Promise<{ value: string; }>
 ```
 
 | Param         | Type                             |
 | ------------- | -------------------------------- |
 | **`options`** | <code>{ base64: string; }</code> |
 
-**Returns:** <code>Promise&lt;{ message: string; }&gt;</code>
+**Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
 
 --------------------
 
@@ -39,14 +40,29 @@ addToWallet(options: { base64: string; }) => Promise<{ message: string; }>
 ### addMultipleToWallet(...)
 
 ```typescript
-addMultipleToWallet(options: { base64: string[]; }) => Promise<{ message: string; }>
+addMultipleToWallet(options: { base64: string[]; }) => Promise<{ value: string; }>
 ```
 
 | Param         | Type                               |
 | ------------- | ---------------------------------- |
 | **`options`** | <code>{ base64: string[]; }</code> |
 
-**Returns:** <code>Promise&lt;{ message: string; }&gt;</code>
+**Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
+
+--------------------
+
+
+### passExists(...)
+
+```typescript
+passExists(options: { base64: string; }) => Promise<{ passExists: boolean; }>
+```
+
+| Param         | Type                             |
+| ------------- | -------------------------------- |
+| **`options`** | <code>{ base64: string; }</code> |
+
+**Returns:** <code>Promise&lt;{ passExists: boolean; }&gt;</code>
 
 --------------------
 
