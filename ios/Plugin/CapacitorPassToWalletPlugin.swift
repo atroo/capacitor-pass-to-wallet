@@ -10,25 +10,16 @@ import PassKit
 public class CapacitorPassToWalletPlugin: CAPPlugin {
     private let implementation = CapacitorPassToWallet()
 
-
     @objc func addToWallet(_ call: CAPPluginCall) {
         let data = call.getString("base64") ?? ""
        
         if let dataPass = Data(base64Encoded: data, options: .ignoreUnknownCharacters){
             if let pass = try? PKPass(data: dataPass){
-                if(PKPassLibrary().containsPass(pass)) {
-                    let error =
-                    """
-                    {"code": 100,"message": "Pass already added"}
-                    """
-                    call.reject(error);
-                } else {
-                    if let vc = PKAddPassesViewController(pass: pass) {
-                        call.resolve([
-                            "value": implementation.echo("SUCCESS")
-                        ]);
-                        self.bridge?.viewController?.present(vc, animated: true, completion: nil);
-                    }
+                if let vc = PKAddPassesViewController(pass: pass) {
+                    call.resolve([
+                        "value": implementation.echo("SUCCESS")
+                    ]);
+                    self.bridge?.viewController?.present(vc, animated: true, completion: nil);
                 }
             } else {
                 let error =
@@ -79,7 +70,37 @@ public class CapacitorPassToWalletPlugin: CAPPlugin {
             call.reject(error);
         }
        
+    }
+
+    @objc func passExists(_ call: CAPPluginCall) {
+        let data = call.getString("base64") ?? ""
+
+        if let dataPass = Data(base64Encoded: data, options: .ignoreUnknownCharacters){
+            if let pass = try? PKPass(data: dataPass){
+                if(PKPassLibrary().containsPass(pass)) {
+                    call.resolve([
+                        "passExists": true
+                    ]);
+                } else {
+                    call.resolve([
+                        "passExists": false
+                    ]);
+                }
+            } else {
+                let error =
+                """
+                {"code": 101,"message": "PKPASS file has invalid data"}
+                """
         
-        
+                call.reject(error);
+            }
+        } else {
+            let error =
+            """
+            {"code": 102,"message": "Error with base64 data"}
+            """
+            call.reject(error);
+            
+        }
     }
 }

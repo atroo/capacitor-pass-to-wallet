@@ -6,4 +6,5 @@
 CAP_PLUGIN(CapacitorPassToWalletPlugin, "CapacitorPassToWallet",
            CAP_PLUGIN_METHOD(addToWallet, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(addMultipleToWallet, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(passExists, CAPPluginReturnPromise);
 )

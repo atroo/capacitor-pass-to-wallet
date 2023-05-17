@@ -18,7 +18,7 @@ public class CapacitorPassToWalletPlugin extends Plugin {
         String value = call.getString("base64");
 
         JSObject ret = new JSObject();
-        ret.put("base64", implementation.addToWallet("Method not implemented on android."));
+        ret.put("value", implementation.addToWallet("Method not implemented on android."));
         call.resolve(ret);
     }
 
@@ -27,7 +27,16 @@ public class CapacitorPassToWalletPlugin extends Plugin {
         String value = call.getString("base64");
 
         JSObject ret = new JSObject();
-        ret.put("base64", implementation.addToWallet("Method not implemented on android."));
+        ret.put("value", implementation.addMultipleToWallet("Method not implemented on android."));
+        call.resolve(ret);
+    }
+
+    @PluginMethod
+    public void passExists(PluginCall call) {
+        String value = call.getString("base64");
+
+        JSObject ret = new JSObject();
+        ret.put("value", implementation.passExists("Method not implemented on android."));
         call.resolve(ret);
     }
 }
