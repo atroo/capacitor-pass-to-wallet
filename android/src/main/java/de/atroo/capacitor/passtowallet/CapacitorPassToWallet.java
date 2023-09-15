@@ -1,4 +1,4 @@
-package com.nitnelav.pass.to.wallet;
+package de.atroo.capacitor.passtowallet;
 
 import android.util.Log;
 

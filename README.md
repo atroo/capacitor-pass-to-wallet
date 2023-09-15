@@ -9,13 +9,24 @@ npm install @atroo/capacitor-pass-to-wallet
 npx cap sync
 ```
 
+## Compatibility
+
+| Capacitor Version  | Plugin Version |
+| ------------- | ------------- |
+| 4.x  | 1.x  |
+| 5.x  | 2.x |
+
 ## API
 
 <docgen-index>
 
-* [`addToWallet(...)`](#addtowallet)
-* [`addMultipleToWallet(...)`](#addmultipletowallet)
-* [`passExists(...)`](#passexists)
+- [capacitor-pass-to-wallet](#capacitor-pass-to-wallet)
+  - [Install](#install)
+  - [Compatibility](#compatibility)
+  - [API](#api)
+    - [addToWallet(...)](#addtowallet)
+    - [addMultipleToWallet(...)](#addmultipletowallet)
+    - [passExists(...)](#passexists)
 
 </docgen-index>
 
