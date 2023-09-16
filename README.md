@@ -20,13 +20,9 @@ npx cap sync
 
 <docgen-index>
 
-- [capacitor-pass-to-wallet](#capacitor-pass-to-wallet)
-  - [Install](#install)
-  - [Compatibility](#compatibility)
-  - [API](#api)
-    - [addToWallet(...)](#addtowallet)
-    - [addMultipleToWallet(...)](#addmultipletowallet)
-    - [passExists(...)](#passexists)
+* [`addToWallet(...)`](#addtowallet)
+* [`addMultipleToWallet(...)`](#addmultipletowallet)
+* [`passExists(...)`](#passexists)
 
 </docgen-index>
 
