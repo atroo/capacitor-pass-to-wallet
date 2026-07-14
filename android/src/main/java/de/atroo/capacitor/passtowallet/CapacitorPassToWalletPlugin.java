@@ -12,7 +12,6 @@ public class CapacitorPassToWalletPlugin extends Plugin {
 
     private CapacitorPassToWallet implementation = new CapacitorPassToWallet();
 
-
     @PluginMethod
     public void addToWallet(PluginCall call) {
         String value = call.getString("base64");

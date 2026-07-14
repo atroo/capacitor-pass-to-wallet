@@ -3,4 +3,3 @@ export interface CapacitorPassToWalletPlugin {
   addMultipleToWallet(options: { base64: string[] }): Promise<{ value: string }>;
   passExists(options: { base64: string }): Promise<{ passExists: boolean }>;
 }
-

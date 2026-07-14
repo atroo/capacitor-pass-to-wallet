@@ -1,6 +1,6 @@
 # capacitor-pass-to-wallet
 
-Allow to add .pkpass file to Apple Wallet
+Allows adding `.pkpass` files to Apple Wallet.
 
 ## Install
 
@@ -17,6 +17,14 @@ npx cap sync
 | 5.x               | 2.x            |
 | 6.x               | 3.x            |
 | 7.x               | 7.x            |
+| 8.x               | 8.x            |
+
+## Requirements (Capacitor 8)
+
+- `@capacitor/core` `>=8.0.0`
+- iOS deployment target: `15.0+`
+- Android `minSdkVersion`: `24+`
+- Android build defaults in this plugin: `compileSdkVersion 36`, `targetSdkVersion 36`, Java `21`
 
 ## API
 
